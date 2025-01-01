@@ -124,5 +124,12 @@ public class Main {
         // Returns the number of key-value pairs in the map.
         System.out.println("--------------------------------");
         System.out.println("Size Of map map.size() :- "+ map.size());
+
+
+        // 8. clear() :
+        // Removes all key-value pairs from the map.
+        System.out.println("--------------------------------");
+        map.clear();
+        System.out.println("Size Of map After clear():- "+ map.size());
     }
 }
