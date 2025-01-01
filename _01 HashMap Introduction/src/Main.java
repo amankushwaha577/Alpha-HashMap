@@ -68,6 +68,19 @@ public class Main {
         System.out.println("Contains 400? " + map.containsValue(400));
         System.out.println("Contains 80000? " + map.containsValue(8000));
 
+        // Search emptiness
+        // --------------------------------
+        // 7. isEmpty()
+        // Checks if the map is empty.
+        // returns true/false
+        System.out.println("is map empty ? " + map.isEmpty());
+
+
+
+        // Iteration Operations :
+        // -----------------------------------------
+        // Search Key
+        // --------------------------------
 
 
 
