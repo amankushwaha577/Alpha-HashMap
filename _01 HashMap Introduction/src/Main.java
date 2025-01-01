@@ -13,6 +13,7 @@ public class Main {
         map.put("Apple", 300);
         map.put("Banana", 35);
         map.put("Orange", 70);
+        System.out.println("map -> "+ map);
 
         // Accessing elements
         // 2. get(Object key) :
