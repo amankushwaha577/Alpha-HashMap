@@ -14,6 +14,7 @@ public class Main {
         // Accessing elements
         // 2. get(Object key) :
         // Returns the value associated with the specified key, or null if the key is not found.
+        // returns value/null
         System.out.println("Apple Price: " + map.get("Apple"));
         System.out.println("Apple2 Price: " + map.get("Apple2"));
 
