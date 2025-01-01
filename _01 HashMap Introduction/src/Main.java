@@ -1,5 +1,7 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -87,6 +89,7 @@ public class Main {
         System.out.println("--------------------------------");
         System.out.println("Print HashMap (Iteration) -");
         System.out.println("map.keySet() : " + map.keySet());
+        // or Set<String> keys = map.keySet();
         for (String key : map.keySet()) {
             System.out.println(key + ": " + map.get(key));
         }
@@ -96,6 +99,7 @@ public class Main {
         // 6.2. values() :
         // Returns a Collection view of all the values in the map.
         System.out.println("map.values() : " + map.values());
+        // or Collection<Integer> values = map.values();
         for (int value : map.values()) {
             System.out.println( value);
         }
@@ -106,6 +110,7 @@ public class Main {
         // Returns a Set view of all the key-value pairs (Map.Entry<K, V> objects) in the map.
         System.out.println("Print HashMap (Iteration) -");
         System.out.println("map.entrySet() : " + map.entrySet());
+        // or Set<Map.Entry<String, Integer>> entries = map.entrySet();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry );
             System.out.println(entry.getKey() + ": " + entry.getValue());
