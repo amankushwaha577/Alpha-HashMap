@@ -48,9 +48,25 @@ public class Main {
 
 
         // Search Operations :
+        // -----------------------------------------
+        // Search Key
+        // --------------------------------
+        // 5. containsKey(Object key) :
+        // Checks if the map contains the specified key.
+        // returns true/false
         System.out.println("--------------------------------");
+        System.out.println("Print HashMap (Search Operations) -");
         System.out.println("Contains Banana? " + map.containsKey("Banana"));
         System.out.println("Contains Kiwi? " + map.containsKey("Kiwi"));
+
+        // Search value
+        // --------------------------------
+        // 6. containsValue(Object value)
+        // Checks if the map contains one or more keys that map to the specified value.
+        // returns true/false
+        System.out.println("Contains 400? " + map.containsValue(400));
+        System.out.println("Contains 80000? " + map.containsValue(8000));
+
 
 
 
