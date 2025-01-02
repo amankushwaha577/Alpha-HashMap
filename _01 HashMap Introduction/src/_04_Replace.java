@@ -15,6 +15,7 @@ public class _04_Replace {
 
         // 4.A. replace(K key, V value):
         //      Replaces the value for the specified key if it exists.
+        // ------------------------------------------------------------------
         // Returns :
         // a. if key matches + if the optional parameter oldValue is not present :
         //    than returns The previous value associated with the specified key.
@@ -37,6 +38,7 @@ public class _04_Replace {
 
         // 4.B. replace(K key, V oldValue, V newValue):
         //      Replaces the value for the key only if it is currently mapped to oldValue.
+        // --------------------------------------------------------------------------------
         // Returns :
         // a. if key matches + if the optional parameter oldValue is also matches :
         //    than returns true else false
@@ -47,6 +49,18 @@ public class _04_Replace {
         // key matched + value did't matched => No Replacement + return false
         System.out.println("Old Kiwi -> "+ map.replace("Kiwi", 11, 800));
         // key does't match => returns false
+        System.out.println("map -> "+ map);
+        System.out.println("--------------------------------");
+
+
+
+        // 4.C. replaceAll() :
+        //      The replaceAll() method takes a single parameter that is a function.
+        //      this function is a operation to be applied to each entry of the hashmap.
+        // ---------------------------------------------------------------------------------------
+        // The replaceAll() method does not return any values
+        // -------------------------------
+        map.replaceAll((key, value) -> value*900);
         System.out.println("map -> "+ map);
     }
 }
