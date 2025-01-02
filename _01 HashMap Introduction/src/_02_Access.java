@@ -25,9 +25,17 @@ public class _02_Access {
         // Note :  if either the specified key is mapped to a null value
         System.out.println("Apple Price: " + map.get("Apple"));
         System.out.println("Apple2 Price: " + map.get("Apple2"));
+        System.out.println("--------------------------------");
 
 
-        // Iterating over the map
+        // 2.B. getOrDefault(Object key, V defaultValue)
+        // Returns the value associated with the key or a default value if the key is not found.
+        // returns value/yourDefaultValue
+        System.out.println("Apple Price: " + map.getOrDefault("Apple", 123)); // defaultvalue should have same datatype as 'value'
+        System.out.println("Apple2 Price: " + map.getOrDefault("Apple2", 123));
+        System.out.println("--------------------------------");
+
+
         System.out.println("--------------------------------");
         System.out.println("Print HashMap -");
         for (String key : map.keySet()) {
