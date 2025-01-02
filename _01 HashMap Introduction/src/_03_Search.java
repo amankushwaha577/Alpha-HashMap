@@ -46,12 +46,12 @@ public class _03_Search {
 
 
 
-        // size() :
+        // 4. size() :
         // Returns the number of key-value pairs in the map.
         System.out.println("Size Of map map.size() :- "+ map.size());
         System.out.println("--------------------------------");
 
-        // 8. clear() :
+        // 5. clear() :
         // Removes all key-value pairs from the map.
         map.clear();
         System.out.println("Size Of map After clear():- "+ map.size());
