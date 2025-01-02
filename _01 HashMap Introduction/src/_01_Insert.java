@@ -46,7 +46,23 @@ public class _01_Insert {
         // other keys are not existing in map1 so add them as it is.
         System.out.println("Print HashMap map1 after merging with map2 -");
         System.out.println("map1 -> "+ map1);
+        System.out.println("--------------------------------");
 
+
+
+        // 1.C. putIfAbsent(K key, V value)
+        //      Inserts the key-value pair only if the key is not already present.
+        // ------------------------------------------------------------------------------------------
+        // putIfAbsent() Return Value -
+        // ----------------------------
+        // a. if the specified key is already present => returns the value associated with the key
+        // b. if the specified key is't already present => returns null
+        map1.putIfAbsent("Apple", 99999); // Apple key already present so ignore this operation.
+        System.out.println(map1.putIfAbsent("Apple", 99999)); // Apple key already present so return value associated with it.
+        System.out.println("map1 -> "+ map1);
+
+        System.out.println(map1.putIfAbsent("Date", 44)); // Date key is not present so insert it. and return null
+        System.out.println("map1 -> "+ map1);
 
 
     }
