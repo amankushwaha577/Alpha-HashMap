@@ -69,7 +69,7 @@ public class _02_Access {
         // 2.B.(iii) entrySet() :
         //           Returns a Set view of all the key-value pairs (Map.Entry<K, V> objects) in the map.
         System.out.println("Print HashMap (Iteration) -");
-        System.out.println("map.entrySet() : " + map.entrySet());
+        System.out.println("map.entrySet() : Set View : " + map.entrySet());
         // or Set<Map.Entry<String, Integer>> entries = map.entrySet();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry );
