@@ -18,7 +18,7 @@ public class _02_Access {
         // Accessing elements :
         // -----------------------------------------------
 
-        // 2.A. get(Object key) :
+        // 2.A.(i) get(Object key) :
         // -----------------------
         // Returns the value associated with the specified key, or null if the key is not found.
         // returns value/null
@@ -28,7 +28,7 @@ public class _02_Access {
         System.out.println("--------------------------------");
 
 
-        // 2.B. getOrDefault(Object key, V defaultValue)
+        // 2.A.(ii) getOrDefault(Object key, V defaultValue)
         // Returns the value associated with the key or a default value if the key is not found.
         // returns value/yourDefaultValue
         System.out.println("Apple Price: " + map.getOrDefault("Apple", 123)); // defaultvalue should have same datatype as 'value'
@@ -36,39 +36,33 @@ public class _02_Access {
         System.out.println("--------------------------------");
 
 
-        System.out.println("--------------------------------");
-        System.out.println("Print HashMap -");
-        for (String key : map.keySet()) {
-            System.out.println(key + ": " + map.get(key));
-        }
 
-
-
-
-
-        // Iteration Operations :
+        // Accessing elements (Iteration Operations) :
         // --------------------------------
+
         // Iterate Keys
         // --------------------------------
-        // 6.1. keySet() :
-        // Returns a Set view of all the keys in the map.
-        System.out.println("--------------------------------");
+        // 2.B.(i) keySet() :
+        //         Returns a Set view of all the keys in the map.
         System.out.println("Print HashMap (Iteration) -");
-        System.out.println("map.keySet() : " + map.keySet());
+        System.out.println("map.keySet() : Set View : " + map.keySet());
         // or Set<String> keys = map.keySet();
         for (String key : map.keySet()) {
             System.out.println(key + ": " + map.get(key));
         }
+        System.out.println("--------------------------------");
 
         // Iterate Values
         // --------------------------------
-        // 6.2. values() :
-        // Returns a Collection view of all the values in the map.
-        System.out.println("map.values() : " + map.values());
+        // 2.B.(ii) values() :
+        //          Returns a Collection view of all the values in the map.
+        System.out.println("Print HashMap (Iteration) -");
+        System.out.println("map.values() : Collection View : " + map.values());
         // or Collection<Integer> values = map.values();
         for (int value : map.values()) {
             System.out.println( value);
         }
+        System.out.println("--------------------------------");
 
         // Iterate Key-value pairs
         // --------------------------------
