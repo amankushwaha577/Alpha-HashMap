@@ -41,6 +41,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // Helper method to search for a key in a specific bucket and return its index
     private int searchInLL(K key, int bi) {
         LinkedList<Node> bucket = buckets[bi];
+        // Fetch the linked list at the specified bucket index
 
         for (int i = 0; i < bucket.size(); i++) {
             if (bucket.get(i).key.equals(key)) {
@@ -93,9 +94,9 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // Implementing the keySet() method to return all keys in the HashMap
     public ArrayList<K> keySet() {
         ArrayList<K> keys = new ArrayList<>();
-        for (int i = 0; i < buckets.length; i++) { // Traverse through each bucket
+        for (int i = 0; i < buckets.length; i++) {  // bi   // Traverse through each bucket
             LinkedList<Node> ll = buckets[i];
-            for (int j = 0; j < ll.size(); j++) { // Traverse through each node in the bucket
+            for (int j = 0; j < ll.size(); j++) {   // di   // Traverse through each node in the bucket
                 Node node = ll.get(j);
                 keys.add(node.key); // Add key to the list
             }
