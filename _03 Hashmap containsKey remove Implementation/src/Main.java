@@ -210,6 +210,10 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
             return node.value;
         }
     }
+
+    public boolean isEmpty() {
+        return n == 0;
+    }
 }
 
 public class Main {
