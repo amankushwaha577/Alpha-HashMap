@@ -82,6 +82,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
 
 
     // Helper method to search for a key in a specific bucket and return its index
+    // Takes (bucket index + key) => return data index
     private int searchInLL(K key, int bi) {
         LinkedList<Node> bucket = buckets[bi];
         // Fetch the linked list at the specified bucket index
