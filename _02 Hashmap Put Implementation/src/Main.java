@@ -22,21 +22,26 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     @SuppressWarnings("unchecked")
     public HashMap() {
         this.N = 4; // Initial number of buckets
-        this.buckets = new LinkedList[N]; // currently each bucket have null.
+        this.buckets = new LinkedList[N]; // Each bucket initially null
         for (int i = 0; i < N; i++) {
             this.buckets[i] = new LinkedList<>(); // Initialize each bucket as an empty linked list
         }
     }
 
     // Hash function to calculate the bucket index for a given key
+    // 1. Generate Hash Code: key.hashCode() generates a hash code for the given key, which can be positive or negative.
+    // 2. Ensure Non-Negative: Math.abs(bi) ensures the hash code is non-negative.
+    // 3. Index Calculation: The hash code is then taken modulo N (number of buckets) to ensure the index fits within the array size:
+    // This approach ensures the key is mapped to a valid bucket index in the range [0, N-1]
     private int hashFunction(K key) {
-        int bi = key.hashCode(); // Generate a hash code for the key
+        int bi = key.hashCode(); // Generate hash code for the key
         return Math.abs(bi) % N; // Ensure the index is non-negative and within the array size
     }
 
     // Helper method to search for a key in a specific bucket and return its index
     private int searchInLL(K key, int bi) {
-        LinkedList<Node> bucket = buckets[bi]; // Fetch the linked list at the specified bucket index
+        LinkedList<Node> bucket = buckets[bi];
+
         for (int i = 0; i < bucket.size(); i++) {
             if (bucket.get(i).key.equals(key)) {
                 return i; // Return the index if the key is found
@@ -60,7 +65,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
         }
 
         // Check the load factor and rehash if necessary
-        double loadFactor = (double) n / N; // Calculate the load factor
+        double loadFactor = (double) n / N;
         if (loadFactor > 2.0) {
             rehash(); // Perform rehashing if the load factor exceeds 2.0
         }
@@ -69,20 +74,33 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // Rehashing method to resize the HashMap and redistribute elements
     @SuppressWarnings("unchecked")
     private void rehash() {
-        LinkedList<Node>[] oldBuckets = buckets; // Store the current buckets temporarily
+        LinkedList<Node>[] oldBuckets = buckets;
         N = 2 * N; // Double the number of buckets
-        buckets = new LinkedList[N]; // Create a new bucket array with the updated size
+        buckets = new LinkedList[N];
         for (int i = 0; i < N; i++) {
-            buckets[i] = new LinkedList<>(); // Initialize each new bucket as an empty linked list
+            buckets[i] = new LinkedList<>();
         }
-        n = 0; // Reset the number of key-value pairs
+        n = 0;
 
         // Reinsert all elements into the new buckets
         for (LinkedList<Node> bucket : oldBuckets) {
             for (Node node : bucket) {
-                put(node.key, node.value); // Reinsert all nodes into the resized hash map
+                put(node.key, node.value);
             }
         }
+    }
+
+    // Implementing the keySet() method to return all keys in the HashMap
+    public ArrayList<K> keySet() {
+        ArrayList<K> keys = new ArrayList<>();
+        for (int i = 0; i < buckets.length; i++) { // Traverse through each bucket
+            LinkedList<Node> ll = buckets[i];
+            for (int j = 0; j < ll.size(); j++) { // Traverse through each node in the bucket
+                Node node = ll.get(j);
+                keys.add(node.key); // Add key to the list
+            }
+        }
+        return keys;
     }
 }
 
@@ -90,8 +108,17 @@ public class Main {
     public static void main(String[] args) {
         // Create a HashMap instance with String keys and Integer values
         HashMap<String, Integer> map = new HashMap<>();
-        map.put("India", 190); // Add entry for India
-        map.put("China", 200); // Add entry for China
-        map.put("US", 50);     // Add entry for US
+        map.put("India", 190);
+        map.put("China", 200);
+        map.put("US", 50);
+        map.put("Brazil", 100);
+        map.put("UK", 80);
+
+        // Print the keys using the keySet() method
+        System.out.println("Keys in the HashMap:");
+        ArrayList<String> keys = map.keySet();
+        for (String key : keys) {
+            System.out.println(key);
+        }
     }
 }
