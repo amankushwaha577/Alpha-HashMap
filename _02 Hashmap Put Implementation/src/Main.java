@@ -36,7 +36,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
         int bi = key.hashCode(); // Generate hash code for the key
         return Math.abs(bi) % N; // Ensure the index is non-negative and within the array size
     }
-    // key is mapped to a valid bucket index in the range [0, N-1]
+    // returns bucket index in the range [0, N-1]
 
     // Helper method to search for a key in a specific bucket and return its index
     private int searchInLL(K key, int bi) {
