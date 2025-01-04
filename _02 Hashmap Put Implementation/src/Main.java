@@ -23,9 +23,14 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     public HashMap() {
         this.N = 4; // Initial number of buckets
         this.buckets = new LinkedList[N]; // Each bucket initially null
+        // this.buckets = [null, null, null, null];
+        // Array of 4 null references
+
         for (int i = 0; i < N; i++) {
             this.buckets[i] = new LinkedList<>(); // Initialize each bucket as an empty linked list
         }
+        // this.buckets = [LinkedList{}, LinkedList{}, LinkedList{}, LinkedList{}];
+        // Array of 4 empty LinkedLists
     }
 
     // Hash function to calculate the bucket index for a given key
