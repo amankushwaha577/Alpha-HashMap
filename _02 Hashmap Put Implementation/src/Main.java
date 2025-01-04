@@ -32,11 +32,11 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // 1. Generate Hash Code: key.hashCode() generates a hash code for the given key, which can be positive or negative.
     // 2. Ensure Non-Negative: Math.abs(bi) ensures the hash code is non-negative.
     // 3. Index Calculation: The hash code is then taken modulo N (number of buckets) to ensure the index fits within the array size:
-    // This approach ensures the key is mapped to a valid bucket index in the range [0, N-1]
     private int hashFunction(K key) {
         int bi = key.hashCode(); // Generate hash code for the key
         return Math.abs(bi) % N; // Ensure the index is non-negative and within the array size
     }
+    // key is mapped to a valid bucket index in the range [0, N-1]
 
     // Helper method to search for a key in a specific bucket and return its index
     private int searchInLL(K key, int bi) {
