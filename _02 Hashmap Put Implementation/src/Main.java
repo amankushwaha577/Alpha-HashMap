@@ -42,6 +42,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
         return Math.abs(bi) % N; // Ensure the index is non-negative and within the array size
     }
     // returns bucket index in the range [0, N-1]
+    // 8 % 5 = either 0/1/2/3/4 only
     // It returns bucket index in a way that our node will be stored in different different buckets.
     // so sizes of each bucket will be almost same.
     // ---------------------------------------------------------------
