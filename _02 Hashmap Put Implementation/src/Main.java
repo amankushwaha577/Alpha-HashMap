@@ -179,3 +179,10 @@ public class Main {
         }
     }
 }
+
+
+// private LinkedList<Node>[] buckets ?
+// array of LinkedList &  LinkedList is having 'Node' type elements
+
+// private LinkedList<Node> ll ?
+// LinkedList having 'Node' type elements
