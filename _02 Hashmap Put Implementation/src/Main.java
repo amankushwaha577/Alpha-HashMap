@@ -149,16 +149,43 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
 
     // Implementing the keySet() method to return all keys in the HashMap
     public ArrayList<K> keySet() {
+        // Create an ArrayList to hold all keys
         ArrayList<K> keys = new ArrayList<>();
-        for (int i = 0; i < buckets.length; i++) {  // bi   // Traverse through each bucket
-            LinkedList<Node> ll = buckets[i];
-            for (int j = 0; j < ll.size(); j++) {   // di   // Traverse through each node in the bucket
-                Node node = ll.get(j);
-                keys.add(node.key); // Add key to the list
+
+        // Loop through each bucket in the hash map
+        for (int i = 0; i < buckets.length; i++) {  // bi  -> Traverse through each bucket in the array
+            LinkedList<Node> ll = buckets[i]; // Get the linked list (bucket) at index i
+
+            // Loop through each node in the current linked list (bucket)
+            for (int j = 0; j < ll.size(); j++) {   // di  -> Traverse through each node in the bucket
+                Node node = ll.get(j); // Get the node at index j in the linked list
+                keys.add(node.key); // Add the key of the node to the 'keys' list
             }
         }
+
+        // Return the list of all keys in the HashMap
         return keys;
     }
+
+
+    // Implementing the get() method to retrieve the value associated with the given key
+    public V get(K key) {
+        // Get the bucket index for the key using the hash function
+        int bi = hashFunction(key); // bi -> Bucket index of the key
+
+        // Search for the key in the corresponding linked list (bucket)
+        int di = searchInLL(key, bi); // di -> Index of the key in the linked list, -1 if not found
+
+        // If the key does not exist in the hash map (di == -1), return null
+        if (di == -1) {
+            return null; // Key not found, return null
+        } else {
+            // If the key exists, retrieve the corresponding node from the bucket
+            Node node = buckets[bi].get(di); // Get the node from the bucket at index bi
+            return node.value; // Return the value of the found node
+        }
+    }
+
 }
 
 public class Main {
@@ -171,11 +198,9 @@ public class Main {
         map.put("Brazil", 100);
         map.put("UK", 80);
 
-        // Print the keys using the keySet() method
-        System.out.println("Keys in the HashMap:");
         ArrayList<String> keys = map.keySet();
-        for (String key : keys) {
-            System.out.println(key);
+        for(int i=0; i<keys.size(); i++) {
+            System.out.println(keys.get(i)+" "+map.get(keys.get(i)));
         }
     }
 }
