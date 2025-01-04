@@ -45,8 +45,29 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // λ (lambda) = n /N
     // Note : Size of each bucket can be less/equal<= λ
     // ---------------------------------------------------------------
+
+    // ---------------------------------------------------------------
     // Sometime we gives threshold value k where it means :  λ <= k
     // mean, λ (lambda) should always be less / equal to this k else rehash.
+    // ---------------------------------------------------------------
+
+    // ---------------------------------------------------------------
+    // n  ∝  λ
+    // if n (nodes) increase than  λ  will also increase.
+    // (i).  If we set k= 2
+    //       λ = 7 / 4
+    //       λ = 1.75 ≤ k ✓ correct
+    // (ii). One More node is added
+    //       λ = 8 / 4
+    //       λ = 2    ≤ k ✓ correct
+    // (iii).One More node is added
+    //       λ = 9 / 4
+    //       λ = 2.25   > k x Incorrect
+    //       Need Rehashing
+    //       because if λ icreases time complexity of put will increase
+    //       λ should be ≤ k for better performance
+    // ---------------------------------------------------------------
+
 
 
     // Helper method to search for a key in a specific bucket and return its index
