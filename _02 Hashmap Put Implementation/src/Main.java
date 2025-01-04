@@ -66,6 +66,11 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     //       Need Rehashing
     //       because if λ icreases time complexity of put will increase
     //       λ should be ≤ k for better performance
+    // Solution:
+    // Create double size array =  N x 2
+    // Now do rehashing
+    // Now apply put() on individual node
+    // now node will be on different buckets where λ ≤ k
     // ---------------------------------------------------------------
 
 
