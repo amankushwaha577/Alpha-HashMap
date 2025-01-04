@@ -121,7 +121,7 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // Rehashing method to resize the HashMap and redistribute elements
     @SuppressWarnings("unchecked")
     private void rehash() {
-        LinkedList<Node>[] oldBuckets = buckets;
+        LinkedList<Node>[] oldBuckets = buckets; // copy
         N = 2 * N; // Double the number of buckets
         buckets = new LinkedList[N];
         for (int i = 0; i < N; i++) {
@@ -130,8 +130,8 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
         n = 0;
 
         // Reinsert all elements into the new buckets
-        for (LinkedList<Node> bucket : oldBuckets) {
-            for (Node node : bucket) {
+        for (LinkedList<Node> ll : oldBuckets) {
+            for (Node node : ll) {
                 put(node.key, node.value);
             }
         }
