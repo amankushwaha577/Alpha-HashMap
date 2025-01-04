@@ -205,8 +205,9 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
         if (di == -1) { // Key not found
             return null;
         } else { // Key found, remove the node and return its value
+            Node node = buckets[bi].remove(di);
             n--;
-            return buckets[bi].remove(di).value;
+            return node.value;
         }
     }
 }
