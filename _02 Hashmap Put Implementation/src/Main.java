@@ -39,6 +39,15 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
     // returns bucket index in the range [0, N-1]
     // It returns bucket index in a way that our node will be stored in different different buckets.
     // so sizes of each bucket will be almost same.
+    // ---------------------------------------------------------------
+    // So Our n Nodes will be divided on all N buckes
+    // Nodes in each bucket(λ) = n / N
+    // λ (lambda) = n /N
+    // Note : Size of each bucket can be less/equal<= λ
+    // ---------------------------------------------------------------
+    // Sometime we gives threshold value k where it means :  λ <= k
+    // mean, λ (lambda) should always be less / equal to this k else rehash.
+
 
     // Helper method to search for a key in a specific bucket and return its index
     private int searchInLL(K key, int bi) {
