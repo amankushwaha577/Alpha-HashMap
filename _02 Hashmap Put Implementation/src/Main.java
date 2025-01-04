@@ -95,8 +95,10 @@ class HashMap<K, V> { // Generics used for key (K) and value (V)
 
     // Inserts a new key-value pair or updates an existing key with a new value
     public void put(K key, V value) {
-        int bi = hashFunction(key); // Get the bucket index for the key
-        int di = searchInLL(key, bi); // Check if the key already exists in the bucket
+        int bi = hashFunction(key);
+        //  bucket index : Get the bucket index for the key
+        int di = searchInLL(key, bi);
+        //  data index : Check if the key already exists in the bucket
 
         if (di != -1) {
             // If key exists, update the value
