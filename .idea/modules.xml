@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Alpha-HashMap.iml" filepath="$PROJECT_DIR$/.idea/Alpha-HashMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_00 Hashing/_00 Hashing.iml" filepath="$PROJECT_DIR$/_00 Hashing/_00 Hashing.iml" />
       <module fileurl="file://$PROJECT_DIR$/_01 HashMap Introduction/_01 HashMap Introduction.iml" filepath="$PROJECT_DIR$/_01 HashMap Introduction/_01 HashMap Introduction.iml" />
       <module fileurl="file://$PROJECT_DIR$/_02 Hashmap Put keySet get Implementation/_02 Hashmap Put keySet get Implementation.iml" filepath="$PROJECT_DIR$/_02 Hashmap Put keySet get Implementation/_02 Hashmap Put keySet get Implementation.iml" />
       <module fileurl="file://$PROJECT_DIR$/_03 Hashmap containsKey remove Implementation/_03 Hashmap containsKey remove Implementation.iml" filepath="$PROJECT_DIR$/_03 Hashmap containsKey remove Implementation/_03 Hashmap containsKey remove Implementation.iml" />
