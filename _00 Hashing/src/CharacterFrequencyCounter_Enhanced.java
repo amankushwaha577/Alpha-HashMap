@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class CharacterFrequencyCounter {
+public class CharacterFrequencyCounter_Enhanced {
 
     public static void main(String[] args) {
         // Template input string
